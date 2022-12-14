@@ -1,0 +1,190 @@
+body{
+    font-family: cursive;
+}
+.body{
+    width: 70%;
+    margin: auto;
+}
+.body p{
+    color: grey;
+}
+.text>h3{
+    color:rgb(72, 195, 243);
+    font-size: 45px;
+}
+.text>h4{
+    font-size: 25px;
+    color: rgb(49, 49, 49);
+}
+.des{
+    text-align: center;
+}
+.des>h3{
+    color:rgb(75, 74, 74);
+font-size: 45px;
+font-style: italic;
+}
+.des>button{
+    background-color: skyblue;
+    padding: 15px 50px;
+    border: 0px;
+    color:blanchedalmond;
+    font-size: medium;
+}
+.des>button:hover{
+    background-color: aliceblue;
+    color: skyblue;
+    border: 2px solid skyblue;
+}
+.des2{
+    display: flex;
+    margin-top: 20%;
+    align-items:center;
+}
+.des2>div:nth-child(2)>video{
+    width: 100%;
+}
+.des2 button{
+    font-size: medium;
+    padding: 15px 50px;
+    color: skyblue;
+    border: 2px solid skyblue;
+}
+.des2 button:hover{
+    color: aliceblue;
+    background-color: skyblue;
+}
+.des2 video{
+    width: 80%;
+}
+
+.des3{
+    display: flex;
+    margin-top: 25%;
+    
+    align-items: center;
+}
+.des3>div{
+    width: 50%;
+}
+.des3 text>h3{
+    color: rgb(54, 54, 231);
+    font-size: 50px;
+}
+.des3 video{
+    width: 80%;
+}
+.des3 button{
+    background-color: skyblue;
+    border: 0px;
+    color: blanchedalmond;
+    padding:15px 40px;
+    font-size:medium;
+}
+.des3 button:hover{
+    background-color: blanchedalmond;
+    border: 2px solid skyblue;
+    color: skyblue;
+}
+.des4{
+    display: flex;
+    align-items:center;
+}
+.des4>div{
+    width: 50%;
+    margin-top: 25%;
+}
+.des4>div:nth-child(2){
+    padding-left: 20px;
+}
+.des4 video{
+    width: 80%;
+}
+.des4 button{
+    background-color: skyblue;
+    border: 0px;
+    color: blanchedalmond;
+    padding:15px 40px;
+    font-size:medium;
+}
+.des4 button:hover{
+    background-color: blanchedalmond;
+    border: 2px solid skyblue;
+    color: skyblue;
+}
+.des5{
+    display: flex;
+    margin-top: 25%;
+}
+.des5>div{
+    width: 50%;
+}
+.des5 video{
+    width: 100%;
+}
+.des5 button{
+    background-color: skyblue;
+    border: 0px;
+    color: blanchedalmond;
+    padding:15px 40px;
+    font-size:medium;
+}
+.des5 button:hover{
+    background-color: blanchedalmond;
+    border: 2px solid skyblue;
+    color: skyblue;
+}
+.des6{
+    display: flex;
+    align-items: center;
+    margin-top: 25%;
+}
+.des6>div{
+    width: 50%;
+}
+.des6 img{
+    width: 80%;
+}
+.des6 h3{
+    color: rgb(88, 80, 80);
+    font-size: 60px;
+}
+.des6 button{
+    background-color: skyblue;
+    border: 0px;
+    color: blanchedalmond;
+    padding:15px 40px;
+    font-size:medium;
+}
+.des6 button:hover{
+    background-color: blanchedalmond;
+    border: 2px solid skyblue;
+    color: skyblue;
+}
+.last{
+    margin-top: 15%;
+    padding: 25px;
+    background-color: rgb(220, 234, 240);
+    text-align: center;
+}
+.last>h4{
+    font-size: 45px;
+    color: rgb(79, 190, 235);
+}
+.last>p{
+    margin: 10px 0px;
+    color: blue;
+}
+.last button{
+    margin: 10px 0px;
+    background-color: skyblue;
+    border: 0px;
+    color: blanchedalmond;
+    padding:15px 40px;
+    font-size:medium;
+}
+.last button:hover{
+    background-color: blanchedalmond;
+    border: 2px solid skyblue;
+    color: skyblue;
+}
