@@ -22,20 +22,16 @@ body{
 .des>h3{
     color:rgb(75, 74, 74);
 font-size: 45px;
-font-style: italic;
+font-style:italic;
 }
-.des>button{
-    background-color: skyblue;
-    padding: 15px 50px;
-    border: 0px;
-    color:blanchedalmond;
-    font-size: medium;
+.des>p{
+    font-size: 20px;
+    font-weight: 300px;
+    line-height: 40px;
+    word-spacing: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.des>button:hover{
-    background-color: aliceblue;
-    color: skyblue;
-    border: 2px solid skyblue;
-}
+
 .des2{
     display: flex;
     margin-top: 20%;
@@ -44,15 +40,17 @@ font-style: italic;
 .des2>div:nth-child(2)>video{
     width: 100%;
 }
-.des2 button{
-    font-size: medium;
-    padding: 15px 50px;
-    color: skyblue;
-    border: 2px solid skyblue;
+.des2 h4{
+    font-size: 24px;
+    font-weight: 500px;
+    line-height: 28.8px;
+    word-spacing: 0px;
+    font-family:Arial, Helvetica, sans-serif;
 }
-.des2 button:hover{
-    color: aliceblue;
-    background-color: skyblue;
+.des2 p{
+    font-size: 22px;
+    line-height: 44px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 .des2 video{
     width: 80%;
@@ -67,25 +65,28 @@ font-style: italic;
 .des3>div{
     width: 50%;
 }
-.des3 text>h3{
-    color: rgb(54, 54, 231);
+.text>h3{
+    color: rgb(45, 180, 233);
     font-size: 50px;
+    line-height: 70px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.text>h4{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+}
+.text>p{
+    font-size: 20px;
+    line-height: 37px;
+    font-family: Arial, Helvetica, sans-serif;
+    word-spacing: 0px;
 }
 .des3 video{
     width: 80%;
 }
-.des3 button{
-    background-color: skyblue;
-    border: 0px;
-    color: blanchedalmond;
-    padding:15px 40px;
-    font-size:medium;
-}
-.des3 button:hover{
-    background-color: blanchedalmond;
-    border: 2px solid skyblue;
-    color: skyblue;
-}
+
 .des4{
     display: flex;
     align-items:center;
@@ -100,18 +101,7 @@ font-style: italic;
 .des4 video{
     width: 80%;
 }
-.des4 button{
-    background-color: skyblue;
-    border: 0px;
-    color: blanchedalmond;
-    padding:15px 40px;
-    font-size:medium;
-}
-.des4 button:hover{
-    background-color: blanchedalmond;
-    border: 2px solid skyblue;
-    color: skyblue;
-}
+
 .des5{
     display: flex;
     margin-top: 25%;
@@ -122,18 +112,7 @@ font-style: italic;
 .des5 video{
     width: 100%;
 }
-.des5 button{
-    background-color: skyblue;
-    border: 0px;
-    color: blanchedalmond;
-    padding:15px 40px;
-    font-size:medium;
-}
-.des5 button:hover{
-    background-color: blanchedalmond;
-    border: 2px solid skyblue;
-    color: skyblue;
-}
+
 .des6{
     display: flex;
     align-items: center;
@@ -149,18 +128,7 @@ font-style: italic;
     color: rgb(88, 80, 80);
     font-size: 60px;
 }
-.des6 button{
-    background-color: skyblue;
-    border: 0px;
-    color: blanchedalmond;
-    padding:15px 40px;
-    font-size:medium;
-}
-.des6 button:hover{
-    background-color: blanchedalmond;
-    border: 2px solid skyblue;
-    color: skyblue;
-}
+
 .last{
     margin-top: 15%;
     padding: 25px;
@@ -175,16 +143,18 @@ font-style: italic;
     margin: 10px 0px;
     color: blue;
 }
-.last button{
+
+.button{
     margin: 10px 0px;
     background-color: skyblue;
     border: 0px;
-    color: blanchedalmond;
+    color: rgb(252, 243, 231);
     padding:15px 40px;
     font-size:medium;
-}
-.last button:hover{
-    background-color: blanchedalmond;
     border: 2px solid skyblue;
-    color: skyblue;
+}
+.button:hover{
+    background-color:white;
+    border: 2px solid skyblue;
+    color: rgb(99, 204, 241); 
 }
