@@ -88,31 +88,29 @@
     margin-top: 10%;
     text-align: center;
     font-size: 22px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     /* height: 100vh; */
     
 }
 .covers-child{
  width: 100%;
  display: flex;
- margin: 5%;
- margin-left: 7%;
- text-align: start;
+ margin-top: 3%;
 }
 .covers-child>div{
-    width: 45%;
-    /* border: 1px solid black; */
+    width: 480%;
+    border: 1px solid black;
 }
 .covers-child>div>img{
     width: 100%;
 }
 .prosnal-tick{
     display: flex;
-    /* margin: 5%; */
-   
+    margin: 5%;
 }
 .prosnal-tick>img{
     width: 60px;
+    /* height: 2%; */
 }
 .prosnal-tick>h2{
     margin-top: 2%;
