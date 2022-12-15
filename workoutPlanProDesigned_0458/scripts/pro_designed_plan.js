@@ -178,11 +178,60 @@ slider.addEventListener("transitionend", () => {
     },1)
 })
 
-//----------------------------------------------------------------------------------------------------------
+//-------------------------------------Routine Table--------------------------------------------
+
+let tableBody = document.querySelector("#Mega_Table_body");
+let buttonBox = document.querySelector("#button_box");
+let pages = 12;
+
+async function getDataFromApi() {
+    let rawData = await fetch("https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_limit=100&_page=1");
+    let data = await rawData.json();
+
+    console.log(data);
+    RenderTable(data)
+}
 
 
 
+function RenderTable(array) {
+    tableBody.innerHTML = array.map((item) => {
 
+        return `
+        <tr class="routine_table_body_row">
+    <td align="left">
+        <a id="routine-banner" href=''>
+            <div style="position: relative; height: 50px; overflow: hidden; text-overflow: ellipsis">
+                <img style="object-fit:cover"
+                    src="${item.image}" width="75"
+                    height="50" alt="J">
+            </div>
+        </a>
+    </td>
+
+    <td align="left">
+        <span class="">
+            <a id="routine-title" href='' style="text-decoration : none; color: rgb(58, 184, 230)">
+                <div
+                    style="position: relative; width: 230px; height: 37px; overflow: hidden; text-overflow: ellipsis; font-weight:bold; align: "center";>
+                    ${item.title}</div>
+            </a>
+        </span>
+    </td>
+
+    <td align="center">${item.frequency}</td>
+    <td align="center">${item.category}</td>
+    <td align="center">${item.exp}</td>
+    <td align="center">${item.views}</td>
+    <td align="center"></td>
+    <td align="center">Free</td>
+    </tr>
+        `
+  }).join(" ");
+    
+}
+
+getDataFromApi();
 
 
 
