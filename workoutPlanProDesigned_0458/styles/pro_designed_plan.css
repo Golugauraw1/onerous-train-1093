@@ -1,0 +1,165 @@
+/* --------------------Margin Padding set to 0 And FontStyleing-----------------------  */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#HoleBody {
+    width: 75%;
+    margin: auto;
+    height: 1220px;
+}
+/* --------------------------------Top Heading Text ----------------------------------- */
+
+#heading {
+    height: auto;
+    width: 100%;
+    margin: 10vh auto auto auto;
+    text-align: center;
+
+}
+
+.top_heading_wrapper {
+    height: 18vh;
+    padding: 5px;
+}
+
+.text_content_box>h5 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    padding: 0px 10px 20px 10px;
+    margin-bottom: 10px;
+}
+.top_bottom_text>h3 {
+    font-size: 1.6em;
+    font-weight: 200;
+    margin-top: 25px;
+}
+.heading_bottom>h3 {
+    font-size: 1.6em;
+    font-weight: 200;
+    word-spacing: 0.2rem;
+    color: rgb(107, 107, 107);
+}
+
+/* ----------------------------------Crousel------------------------------------------- */
+
+#cousel_grand_parent {
+    height: 800px;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.cousel_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 1050px;
+    height: 570px;
+    overflow: hidden;
+    position: relative;
+  }
+
+.slider {
+    display: flex;
+    flex-basis: 20%;
+    flex: 1;
+    height: 100%;
+    flex-shrink: 0;
+    width: 4200px;
+    transition: .1s;
+  }
+
+.elements {
+    width: 1050px;
+    height: 512px;
+    flex: 1;
+
+  }
+
+#btn1 {
+    width: 50px;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+#btn2 {
+    width: 50px;
+    height: 30px;
+    position: fixed;
+    right: 0%;
+    top: 0;
+    z-index: 1;
+  }
+
+/*----------------------------------------------- cards style--------------------------------------------- */
+
+.elements {
+    padding: 10px;
+}
+.cards_Wrapper_First,
+.cards_Wrapper_Second,
+.cards_Wrapper_Third,
+.cards_Wrapper_Fourth
+ {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin: 20px 5px 15px 5px;
+}
+.card_Parent {
+    height: 35vh;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-sizing: inherit;
+}
+.card_Parent>a {
+    text-decoration: none;
+}
+
+.card_image>img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.card_text {
+    display: flex;
+    align-items: center;
+}
+.card_text>h3 {
+    padding: 0 25px 0 15px;
+    margin-top: 20px;
+    font-size: 1.7em;
+    color: black;
+    font-weight: 500;  
+}
+
+
+/* -----------------------------------------Middle Text Area-------------------------------------------- */
+
+#Middle_Heading_Container {
+    text-align: center;
+}
+
+.Middle_Heading_Top_Wrapper>h3 {
+    padding: 5px 0px 5px 0px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.Middle_Heading_bottom_Wrapper>h5 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgb(107, 107, 107);
+}
+
+/* ------------------------------------------Table Top Search Bar----------------------------------------*/
+
