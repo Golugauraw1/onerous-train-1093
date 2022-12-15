@@ -87,26 +87,36 @@
 .covers{
     margin-top: 10%;
     text-align: center;
-    font-size: 22px;
+    font-size: 23px;
     border: 1px solid black;
     /* height: 100vh; */
     
 }
+/* .covers>h1{
+    font-size: px;
+} */
 .covers-child{
- width: 100%;
+ /* width: 100%; */
  display: flex;
- margin-top: 3%;
+ margin-top: 7%;
+ text-align: start;
+ margin-left: 11%;
+ font-size: 20px;
+ 
 }
 .covers-child>div{
-    width: 480%;
-    border: 1px solid black;
+    width: 45%;
+    /* border: 1px solid black; */
+    /* margin-left: 3%; */
+    /* margin-left: 3%; */
 }
 .covers-child>div>img{
     width: 100%;
 }
 .prosnal-tick{
     display: flex;
-    margin: 5%;
+    margin-top: 2%;
+    text-align: start;
 }
 .prosnal-tick>img{
     width: 60px;
@@ -117,5 +127,36 @@
     font-size: 25px;
 }
 
+.all-p-btn>button{
+    margin-top: 3%;
+    width: 300px;
+    height: 50px;
+    color: white;
+    background-color: #257cff;
+    font-size: 30px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 5%; 
+}
+.plan{
+    width: 100%;
+    margin-top: 6%;
+    /* height: 200vh;
+    border: 1px solid black; */
+    text-align: center;
+    
+}
+.plan-child{
 
+    display: flex;
+    width: 99%;
+    height: 150vh;
+    border: 1px solid yellow;
+}
+.plan-child>div{
+    width: 30%;
+    height: 120vh;
+    border: 1px solid rgb(241, 2, 2);
+    background-color:#404040;
+}
 
