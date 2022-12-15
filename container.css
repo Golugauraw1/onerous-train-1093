@@ -143,11 +143,10 @@
     margin-top: 6%;
     /* height: 200vh;
     border: 1px solid black; */
-    text-align: center;
+    /* text-align: center; */
     
 }
 .plan-child{
-
     display: flex;
     width: 99%;
     height: 150vh;
