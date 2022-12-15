@@ -1,15 +1,15 @@
 /* --------------------Margin Padding set to 0 And FontStyleing-----------------------  */
-
+body {
+    background-color: rgb(248, 251, 254);
+}
 * {
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
-#HoleBody {
+#wholeBody {
     width: 75%;
     margin: auto;
-    height: 1220px;
 }
 /* --------------------------------Top Heading Text ----------------------------------- */
 
@@ -38,10 +38,11 @@
     margin-top: 25px;
 }
 .heading_bottom>h3 {
+    margin-top: 15px;
     font-size: 1.6em;
     font-weight: 200;
     word-spacing: 0.2rem;
-    color: rgb(107, 107, 107);
+    color: #585f69;
 }
 
 /* ----------------------------------Crousel------------------------------------------- */
@@ -53,7 +54,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
+#cousel_grand_parent>div {
+    position: relative;
+}
 
 .cousel_wrapper {
     display: flex;
@@ -82,27 +87,30 @@
   }
 
 #btn1 {
-    width: 50px;
+    width: 30px;
     height: 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 47%;
+    left: -3.5%;
     z-index: 1;
+    border-radius: 50%;
+    
   }
 
 #btn2 {
-    width: 50px;
+    width: 30px;
     height: 30px;
-    position: fixed;
-    right: 0%;
-    top: 0;
+    position: absolute;
+    right: -3.5%;
+    top: 47%;
     z-index: 1;
+    border-radius: 50%;
   }
 
 /*----------------------------------------------- cards style--------------------------------------------- */
 
 .elements {
-    padding: 10px;
+    /* padding: 10px; */
 }
 .cards_Wrapper_First,
 .cards_Wrapper_Second,
@@ -111,14 +119,16 @@
  {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 10px;
+    gap: 10px 5px;
     margin: 20px 5px 15px 5px;
 }
 .card_Parent {
-    height: 35vh;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    box-sizing: inherit;
+    display: block;
+    min-height: 195px;
+    overflow-y: clip;
+    overflow-y: clip;
 }
 .card_Parent>a {
     text-decoration: none;
@@ -163,3 +173,67 @@
 
 /* ------------------------------------------Table Top Search Bar----------------------------------------*/
 
+#data_Table_Bottom_Main_Container {
+    background-color: rgb(248, 251, 254);
+    margin-top: 25px;
+}
+
+#search_box {
+    border-radius:4px; 
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.4); 
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.4); 
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.24); 
+    -webkit-border-top-left-radius: 5px;                  
+    -webkit-border-bottom-left-radius: 5px;                  
+    -moz-border-radius-topleft: 5px;                                             
+    -moz-border-radius-bottomleft: 5px;                                     
+    -webkit-border-top-right-radius: 0;                      
+    -webkit-border-bottom-right-radius: 0;                                                 
+    -moz-border-radius-topright: 0;                                                 
+    -moz-border-radius-bottomright: 0;                                                  
+    border-top-left-radius: 5px;                                                 
+    border-bottom-left-radius: 5px;                                          
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid rgba(0, 0, 0, .25); 
+    border-top: 1px solid rgba(0, 0, 0, .25);
+    border-bottom: 1px solid #B2B2B2;                    
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+    border-right: 0;
+    padding: .375em 0 .375em .55em;
+    margin-bottom: 0;
+    margin-right: 5px;
+    width: 15em;
+    line-height: 1.5em;
+    font-size: 1em;
+    height: 2.3em;
+    vertical-align: top;
+}
+#Top_Table_Middle_Box_sort_wrapper a {
+    text-decoration: none;
+    color: black;
+}
+#Top_Table_Middle_Box_sort_wrapper {
+   display: flex; 
+}
+#Top_Table_Middle_Box_sort_wrapper>div {
+    width: 210px;
+    margin-right: 70px;
+}
+
+#bottom_jumbo_table {
+    margin-top: 10px;
+}
+#bottom_jumbo_table_head {
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.05);
+    background: -webkit-linear-gradient(top, #e9eaec 0%,#d4d4d6 100%);
+  	background: linear-gradient(top, #e9eaec 0%,#d4d4d6 100%);
+	border-radius:3px;
+	-webkit-box-shadow: 0 1px 3px 1px rgba(0,0,0,.05);
+   	box-shadow: 0 1px 3px 1px rgba(0,0,0,.05);
+    border-collapse: collapse;
+}
+
+#bottom_jumbo_table_head>tr>th {
+    font-weight: 400;
+}
