@@ -140,13 +140,18 @@
           .invalid:before {
            position: relative;
            left: -35px;
-           /* content: "✖"; */
+            content: "✖";
+          }
+          .container>h1{
+            text-align: center;
+            color:black;
           }
         
     </style>
 </head>
 <body>
     <div class="container">
+        <h1 id="message"></h1>
         <div id="container-card">
             <div id="card">
 
@@ -180,7 +185,7 @@
                         </div>
                         <input id="password" name="password" required="required" type="password" placeholder="Conform Password" />
                         <p class="loginbutton">
-                            <input type="submit" value="CREATE ACCOUNT" />
+                            <input onclick="readValue()" type="submit" value="CREATE ACCOUNT" />
                         </p>
                         <div id="tojefit">Already a member? 
                             <a href="login.html" target="_self">Sign in?</a>. 
@@ -207,8 +212,8 @@ function myfun(event){
     };
 
      console.log(Obj)
-    alert("Username has been created successfully");
-    window.location.href="login.html"
+    // alert("Username has been created successfully");
+    // window.location.href="login.html"
      Arr.push(Obj)
     localStorage.setItem("myfitness",JSON.stringify(Arr));
 }
@@ -258,5 +263,12 @@ function myfun(event){
         length.classList.remove("valid");
         length.classList.add("invalid");
       }
+    }
+
+    function readValue(){
+     let userInput= document.querySelector("#username");
+     let message=document.querySelector("#message");
+
+     message.innerHTML="Welcome to FITNESS CLUB ," + userInput.value;
     }
 </script>
