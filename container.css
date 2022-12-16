@@ -6,7 +6,7 @@
 .banner{
     width: 100%;
     height: 110vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: end;
     background-color: #184fa3;
@@ -88,7 +88,9 @@
     margin-top: 10%;
     text-align: center;
     font-size: 23px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    background-color: #f7f9fd;
+
     /* height: 100vh; */
     
 }
@@ -110,6 +112,10 @@
     /* margin-left: 3%; */
     /* margin-left: 3%; */
 }
+.mera-text{
+    background-color: #ffff;
+    padding: 10px;
+}
 .covers-child>div>img{
     width: 100%;
 }
@@ -120,6 +126,7 @@
 }
 .prosnal-tick>img{
     width: 60px;
+    border-radius: 100px;
     /* height: 2%; */
 }
 .prosnal-tick>h2{
@@ -137,25 +144,88 @@
     border: none;
     border-radius: 30px;
     margin-left: 5%; 
+    margin-bottom: 10px;
 }
 .plan{
     width: 100%;
-    margin-top: 6%;
-    /* height: 200vh;
-    border: 1px solid black; */
-    /* text-align: center; */
+    margin-top: 7%;
+    font-size: 25px;
+   text-align: center;
     
 }
 .plan-child{
     display: flex;
+    margin-top: 5%;
     width: 99%;
     height: 150vh;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
+    justify-content: center;
+    gap: 2%;
 }
 .plan-child>div{
-    width: 30%;
-    height: 120vh;
-    border: 1px solid rgb(241, 2, 2);
+    color: white;
+    width: 25%;
+    height: 150vh;
     background-color:#404040;
+    line-height: 80px;
+    padding: 2%;
+}
+.plan-child>div>h6{
+    font-weight: 10px;
+    font-style: inherit;
+    font-size: 20px;
+}
+.p-p{
+    font-size: 20px;
+    color: rgb(184, 184, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.plan-child>div>img{
+    margin-top: 20%;
+    width: 80px;
+    background-color: white;
+    border-radius: 100px;
+    padding: 5px 5px;
+}
+.plan-btn1{
+ background-color:  #404040;
+ color: white;
+ width: 200px;
+ height: 40px;
+ font-size: 20px;
+ border-color: white;
+ border-radius: 90px;
+}
+.plan-btn2{
+    background-color: #257cff;
+    color: white;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 90px;
+   }
+   .want-to{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /* border: 1px solid black; */
+    /* line-height: 70px; */
+    font-size: 22px;
+    text-align: center;
+   }
+   .want-to>button{
+    background-color: #257cff;
+    color: white;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 90px;
+    font-style:normal;
+   }
+   .want-to>h4{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #404040;
 }
 
+   
