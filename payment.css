@@ -1,0 +1,78 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(238, 245, 252);
+}
+
+.navbar>img{
+   padding: 15px 15%;
+}
+.navbar{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.navbar2{
+    padding: 30px;
+}
+.navbar2>div{
+    padding-left: 12.8%;
+}
+.blue{
+    color: skyblue;
+}
+.navbar2 a{
+    text-decoration: none;
+    color: rgb(90, 86, 86);
+}
+.upper{
+    display: flex;
+   background-color:rgb(17, 174, 236);
+}
+.upper>div{
+    margin: auto;
+    font-style:normal;
+    color: aliceblue;
+}
+.upper>div>div:nth-child(2)>p:nth-child(1){
+    font-size: larger;
+}
+.mainbody{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main2>div{
+    font-size:15px;
+    padding: 10px;
+    margin: 30px 15px;
+    /* background-color: rgb(240, 225, 225) */
+   /* background-color:rgb(213, 236, 236) */;
+}
+.main2 td{
+    padding: 0px 20px;
+}
+.lower{
+    display: flex;
+    padding: 1%;
+    margin: 5% 0px 0px 0px;
+   background-color:rgb(17, 174, 236);
+}
+.lower>div{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.lower>div p{
+    color: aliceblue;
+}
+.footer{
+    margin: 0px;
+    height: 120px;
+    background-color: rgb(59, 56, 56);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer p{
+    font-size: small;
+    color: rgb(26, 25, 25);
+}
