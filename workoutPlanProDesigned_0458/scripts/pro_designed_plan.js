@@ -115,12 +115,12 @@ let cardsMainContinerTwo = document.querySelector(".cards_Wrapper_Second");
 let cardsMainContinerThree = document.querySelector(".cards_Wrapper_Third");
 let cardsMainContinerFour = document.querySelector(".cards_Wrapper_Fourth");
 
-RenderDataOnSlider(cardsMainContinerOne,crousalData[0]);
-RenderDataOnSlider(cardsMainContinerTwo,crousalData[1]);
-RenderDataOnSlider(cardsMainContinerThree,crousalData[2]);
-RenderDataOnSlider(cardsMainContinerFour,crousalData[3]);
+RenderDataOnSlider(cardsMainContinerOne, crousalData[0]);
+RenderDataOnSlider(cardsMainContinerTwo, crousalData[1]);
+RenderDataOnSlider(cardsMainContinerThree, crousalData[2]);
+RenderDataOnSlider(cardsMainContinerFour, crousalData[3]);
 
-function RenderDataOnSlider(box,data) {
+function RenderDataOnSlider(box, data) {
     box.innerHTML = data.map(itme => {
         return `
         
@@ -141,9 +141,9 @@ function RenderDataOnSlider(box,data) {
 
 //---------------------------------------------Crousal Function----------------------------------------------
 
-// setInterval(() => {
-//     move()
-// }, 3000)
+setInterval(() => {
+    move()
+}, 3000)
 
 let direction;
 let arr = Array.from(document.getElementsByClassName("elements"));
@@ -175,26 +175,142 @@ slider.addEventListener("transitionend", () => {
     slider.style.transform = "translate(0%)"
     setTimeout(() => {
         slider.style.transition = ".7s"
-    },1)
+    }, 1)
 })
 
 //-------------------------------------Routine Table--------------------------------------------
+window.addEventListener("load", () => {
+    RenderAll()
+});
 
+//======================================Data Catching Function=======================================
+async function RenderAll() {
+    let resultArray = await fatchAllDataFromApi();
+    let [data, count] = resultArray;
+    console.log(data);
+    RenderTable(data);
+    paginationFactory(count)
+}
 let tableBody = document.querySelector("#Mega_Table_body");
 let buttonBox = document.querySelector("#button_box");
-let pages = 12;
+let totalCountSpna = document.querySelector("#totalCount");
 
-async function getDataFromApi() {
-    let rawData = await fetch("https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_limit=100&_page=1");
-    let data = await rawData.json();
+//======================================Window load Function=======================================
+async function fatchAllDataFromApi() {
+    let response = await fetch(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_limit=10&_page=`);
+    let result = await response.json();
+    return await Promise.all([result, response.headers.get("X-Total-Count")])
+}
 
-    console.log(data);
-    RenderTable(data)
+//======================================Pagination Facth Function=======================================
+
+async function limitedData(url,page) {
+    let response = await fetch(`${url}_limit=10&_page=${page}`);
+    let result = await response.json();
+    return RenderTable(result);
+}
+
+//======================================Button Creator Function=======================================
+
+
+function getAsButton(cls, dataId, item) {
+    return `<button class="${cls}" ${dataId ? ` data-id = ${dataId}` : ''}  >${item}</button>`
 }
 
 
 
+//======================================Pagination Intilizer Function=======================================
+
+function paginationFactory(dataCount) {
+    let totalbuttons = Math.ceil(dataCount / 15);
+    let arr = [];
+    for (let i = 1; i <= totalbuttons; i++) {
+        arr.push(getAsButton("buttons", i, i))
+    }
+    buttonBox.innerHTML = `
+    ${arr.map((item) => {
+        return item;
+    }).join(" ")
+        }
+    `
+    let pagiNationbuttons = document.querySelectorAll(".buttons");
+    for (let pagiNationbutton of pagiNationbuttons) {
+        pagiNationbutton.addEventListener("click", (e) => {
+            let id = e.target.dataset.id;
+            limitedData("https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?",id);
+        })
+    }
+};
+
+
+//======================================Data Sorting Function=======================================
+async function FilteredData(gender) {
+    let rawData = await fetch(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_&type=${gender}&_limit=10&_page=${1}`);
+    let data = await rawData.json();
+    return Promise.all([data,rawData.headers.get("X-Total-Count")])
+}
+
+
+    document.querySelector("#form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    let gendersInput = document.querySelectorAll(".gender");
+    let searchvalue = document.querySelector("#search_box");
+    let value = null;
+    gendersInput.forEach(item => {
+        if (item.checked) {
+            value = item.value;
+        }
+    });
+    
+    ;(async() => {
+        let response = await FilteredData(value);
+    
+        console.log(response)
+        RenderTable(response[0])
+        paginationFactory1(response[1]);
+    })();
+     
+    function paginationFactory1(dataCount) {
+        buttonBox.innerHTML = null;
+        let totalbuttons = Math.ceil(dataCount / 15);
+        let arr = [];
+        for (let i = 1; i <= totalbuttons; i++) {
+            arr.push(getAsButton("buttons", i, i))
+        }
+        buttonBox.innerHTML = `
+        ${arr.map((item) => {
+            return item;
+        }).join(" ")
+            }
+        `
+        let pagiNationbuttons = document.querySelectorAll(".buttons");
+        for (let pagiNationbutton of pagiNationbuttons) {
+            pagiNationbutton.addEventListener("click", (e) => {
+                let id = e.target.dataset.id;
+                limitedData(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_&type=${value}&`,id);
+            })
+        }
+    };
+
+});
+
+//============================================Sorting By Categorty========================================
+
+let routinebuttons = document.querySelectorAll(".routineButton");
+
+// for(let routinebutton of routinebuttons) {
+//     routinebutton.addEventListener("click", () => {
+//         let value = 
+//     })
+// }
+
+
+
+
+
+//===============================================Table Rendering==========================================
 function RenderTable(array) {
+    tableBody.innerHTML = null;
     tableBody.innerHTML = array.map((item) => {
 
         return `
@@ -204,7 +320,7 @@ function RenderTable(array) {
             <div style="position: relative; height: 50px; overflow: hidden; text-overflow: ellipsis">
                 <img style="object-fit:cover"
                     src="${item.image}" width="75"
-                    height="50" alt="J">
+                    height="50" >
             </div>
         </a>
     </td>
@@ -227,11 +343,8 @@ function RenderTable(array) {
     <td align="center">Free</td>
     </tr>
         `
-  }).join(" ");
-    
+    }).join(" ");
+
 }
-
-getDataFromApi();
-
 
 

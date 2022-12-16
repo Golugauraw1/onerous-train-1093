@@ -95,8 +95,8 @@
 
         <div id="data_Table_Bottom_Main_Container">
             <div id="Top_Table_Search_Box_Parent">
-
-                <form style="padding-bottom:10px; padding-left: 0px">
+                
+                <form id="form" style="padding-bottom:10px; padding-left: 0px">
                     <table align="left">
                         <tr>
                             <td>
@@ -105,15 +105,15 @@
                                 <table width="100%" style="margin-bottom: 0px">
                                     <tr>
                                         <td width="12%">
-                                            <input style="margin-left:0px" type="radio" name="gender" value="1" />
+                                            <input  type="radio" name="gender" value="male" class="gender"/>
                                             Male<br />
                                         </td>
                                         <td width="13%">
-                                            <input style="margin-left:0px" type="radio" name="gender" value="2" />
+                                            <input  type="radio" name="gender" value="female" class="gender"/>
                                             Female<br />
                                         </td>
-                                        <td width="12%"><input style="margin-left:0px" checked="checked" type="radio"
-                                                name="gender" value="0" /> Both<br />
+                                        <td width="12%"><input checked="checked" type="radio"
+                                                name="gender" value="Both" class="gender"/> Both<br />
                                         </td>
                                         <td width="20%">
                                             <input style="margin-left:0px" checked="checked" style="margin-top:15px"
@@ -264,20 +264,24 @@
                             <th width="14%">Elite/Free</th>
                         </tr>
                     </thead>
+                    <br>
+                </br>
                     <tbody id="Mega_Table_body">
 
                     </tbody>
                 </table>
             </div>
         </div>
-
         <div id="bottomBox">
-            <div class="page_option_color_blue"></div>
-            <div id="button_box"></div>
-            <div class="page_option_color_blue"></div>
+            <div class="page_option_color_blue">Create A Plan</div>
+            <div id="middle_button_wrapper">
+                <div id="button_box"></div>
+            </div>
+            <div class="page_option_color_blue">Share My Plan</div>
         </div>
+        
     </section>
-
+    
 </body>
 <script src="/workoutPlanProDesigned_0458/scripts/pro_designed_plan.js"></script>
 
