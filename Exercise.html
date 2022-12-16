@@ -52,15 +52,8 @@
             <li><button>View All Excercise</button></li>
         </ul>
     </div>
-    <div id="data3">
-        <h2 style="text-align: center;">
-            <span style="color: #212529; font-family: 'Open Sans', sans-serif;">Try Something New</span>
-        </h2>
-        <h3 style="text-align: center; color: #212529; font-family: 'Open Sans', sans-serif;">
-            <span>Change up your routine with one of these exercises!</span>
-        </h3>
-    </div>
-    <form action="" style="min-width: 790px;">
+    
+    <form action="" style="min-width: 790px;" id="form">
         <table width="100%">
             <tbody>
                 <tr>
@@ -184,16 +177,29 @@
                             <li><input type="checkbox" value="1"> Expert</li>
                         </ul>
                     </td>
+                                <!-- Search function -->
                     <td>
                         <input style="margin-top: 10px; width: 60%; margin-right: 20px;" type="text"
                             placeholder="Search..." id="searchText" >
-                        <button><input type="submit" style="color: #fff;" class="SearchButton" value="search"></button>
+                        <button><input type="submit" style="color: #fff;" id="SearchButton" value="search"></button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </form>
+
+    <div id="data3">
+        <h2 style="text-align: center;">
+            <span style="color: #212529; font-family: 'Open Sans', sans-serif;">Try Something New</span>
+        </h2>
+        <h3 style="text-align: center; color: #212529; font-family: 'Open Sans', sans-serif;">
+            <span>Change up your routine with one of these exercises!</span>
+        </h3>
+    </div>
 </body>
 
 </html>
 <script type="module" src="./script/Exercise.js"></script>
+
+
+<!--  -->

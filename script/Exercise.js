@@ -1,35 +1,45 @@
 /*
 * =========>List of all exercises
 */
-// const options7 = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '924add4fcfmsh269d7f1c598e180p115d78jsnfc96436f7d36',
-// 		'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-// 	}
-// };
+
 
 import { exerciseOptions, fetchData } from "./fetchData.js"
 
-// fetch('https://exercisedb.p.rapidapi.com/exercises', options7)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
 
-let search_btn = document.getElementsByClassName('SearchButton')
-search_btn.onclick = () => {
-    handleSearch();
-};
+let form = document.getElementById('form')
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	let search1 = document.querySelector('#searchText')
+	console.log(search1.value)
+	handleSearch(search1.value);
+}) 
+	
 
-const handleSearch = async () => {
-	try{
-		const excercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
-		console.log(excercisesData)
+// const [search, setSearch] = useState('')
+ async function handleSearch(se){
+	// if (search) {
+		// try{
+		// 	const excercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodypart', exerciseOptions);
+		// 	console.log(excercisesData)
+		// }
+		// catch(err){
+		// 	console.log(err);
+		// }
+		const options = {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Key': 'ef64b4469bmsh6a9563b93666788p166408jsn26b5277e7fa0',
+				'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+			}
+		};
+
+		fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${se}`, options)
+			.then(response => response.json())
+			.then(response => console.log(response))
+			.catch(err => console.error(err));
 	}
-	catch(err){
-		console.log(err);
-	}
-}
+
+// }
 
 
 
