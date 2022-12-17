@@ -157,4 +157,5 @@ font-style:italic;
     background-color:white;
     border: 2px solid skyblue;
     color: rgb(99, 204, 241); 
+    cursor: pointer;
 }
