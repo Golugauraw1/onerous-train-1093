@@ -7,6 +7,11 @@ body {
     padding: 0px;
     font-family: 'Open Sans', sans-serif;
 }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 #wholeBody {
     width: 75%;
     margin: auto;
@@ -35,10 +40,13 @@ body {
 .top_bottom_text>h3 {
     font-size: 1.6em;
     font-weight: 200;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
 }
 .heading_bottom>h3 {
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 1.6em;
     font-weight: 200;
     word-spacing: 0.2rem;
@@ -282,4 +290,25 @@ body {
 
 #bottomBox>div:nth-child(3) {
     margin-right: 110px;
+}
+
+
+
+
+/* ================================================Meadia Query================================= */
+
+@media (min-width: 576px) {
+    .top_bottom_text>h3 {
+        margin-top: 5px;
+    }
+    .heading_bottom>h3 {
+        
+    } 
+    
+  
+}
+  
+@media (min-width: 768px) {
+    
+  
 }

@@ -178,12 +178,12 @@ slider.addEventListener("transitionend", () => {
     }, 1)
 })
 
-//-------------------------------------Routine Table--------------------------------------------
+//----------------------------------------------------Routine Table--------------------------------------------
 window.addEventListener("load", () => {
     RenderAll()
 });
 
-//======================================Data Catching Function=======================================
+//===============================================Data Catching Function=======================================
 async function RenderAll() {
     let resultArray = await fatchAllDataFromApi();
     let [data, count] = resultArray;
@@ -195,14 +195,14 @@ let tableBody = document.querySelector("#Mega_Table_body");
 let buttonBox = document.querySelector("#button_box");
 let totalCountSpna = document.querySelector("#totalCount");
 
-//======================================Window load Function=======================================
+//===============================================Window load Function=======================================
 async function fatchAllDataFromApi() {
     let response = await fetch(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_limit=10&_page=`);
     let result = await response.json();
     return await Promise.all([result, response.headers.get("X-Total-Count")])
 }
 
-//======================================Pagination Facth Function=======================================
+//===========================================Pagination Facth Function=======================================
 
 async function limitedData(url,page) {
     let response = await fetch(`${url}_limit=10&_page=${page}`);
@@ -210,7 +210,7 @@ async function limitedData(url,page) {
     return RenderTable(result);
 }
 
-//======================================Button Creator Function=======================================
+//============================================Button Creator Function=======================================
 
 
 function getAsButton(cls, dataId, item) {
@@ -219,7 +219,7 @@ function getAsButton(cls, dataId, item) {
 
 
 
-//======================================Pagination Intilizer Function=======================================
+//=========================================Pagination Intilizer Function=======================================
 
 function paginationFactory(dataCount) {
     let totalbuttons = Math.ceil(dataCount / 15);
@@ -243,7 +243,7 @@ function paginationFactory(dataCount) {
 };
 
 
-//======================================Data Sorting Function=======================================
+//=================================================Data Sorting Function=======================================
 async function FilteredData(gender) {
     let rawData = await fetch(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_&type=${gender}&_limit=10&_page=${1}`);
     let data = await rawData.json();
@@ -294,7 +294,7 @@ async function FilteredData(gender) {
 
 });
 
-//============================================Sorting By Categorty========================================
+//====================================================Sorting By Categorty========================================
 
 let routinebuttons = document.querySelectorAll(".routineButton");
 
@@ -308,7 +308,7 @@ let routinebuttons = document.querySelectorAll(".routineButton");
 
 
 
-//===============================================Table Rendering==========================================
+//====================================================Table Rendering==========================================
 function RenderTable(array) {
     tableBody.innerHTML = null;
     tableBody.innerHTML = array.map((item) => {
