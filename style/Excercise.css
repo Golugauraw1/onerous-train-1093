@@ -136,3 +136,13 @@ a{
     text-decoration: none;
     color: #555555;
 }
+
+#conatiner{
+    margin: auto;
+    /* border: 1px solid black; */
+    width: 1060px; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* margin: 5%; */
+    justify-items: center;
+}

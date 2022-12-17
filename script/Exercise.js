@@ -10,7 +10,7 @@ let form = document.getElementById('form')
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	let search1 = document.querySelector('#searchText')
-	console.log(search1.value)
+	// console.log(search1.value)
 	handleSearch(search1.value);
 }) 
 	
@@ -35,11 +35,43 @@ form.addEventListener("submit", (e) => {
 
 		fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${se}`, options)
 			.then(response => response.json())
-			.then(response => console.log(response))
+			.then(response => appendExercise(response))
+			
 			.catch(err => console.error(err));
 	}
 
 // }
+
+
+function appendExercise(response) {
+	let exercise_div = document.getElementById('conatiner');
+	exercise_div.innerHTML = null;
+	console.log(response)
+	console.log(response[0]['bodypart'])
+
+	response.forEach(function (el) {
+		let div = document.createElement('div');
+
+		let gif = document.createElement('img');
+		gif.src = el.gifUrl
+
+		let h3 = document.createElement('h3');
+        h3.innerText = el.name
+
+        let h4 = document.createElement('h4');
+        h4.innerText = el.equipment
+
+        let h5 = document.createElement('h5');
+        h5.innerText = el.bodyPart
+
+		div.append(gif, h3, h4, h5);
+		exercise_div.append(div)
+	})
+}
+
+
+
+
 
 
 
