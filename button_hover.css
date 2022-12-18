@@ -1,0 +1,25 @@
+.all-p-btn>button:hover{
+    background-color: white;
+    border: 1px solid #257cff ;
+    color: #257cff;
+}
+.slider-btn>button:hover{
+    background-color: rgb(255, 255, 255);
+    color: #257cff;
+    border: 1px solid #257cff ;
+}
+.plan-btn1:hover{
+    background-color: rgb(255, 255, 255);
+    color: #257cff;
+    border: 1px solid #257cff ;
+}
+.plan-btn2:hover{
+    background-color: rgb(255, 255, 255);
+    color: #257cff;
+    border: 1px solid #257cff ;
+}
+.want-to>button:hover{
+    background-color: rgb(255, 255, 255);
+    color: #257cff;
+    border: 1px solid #257cff ;
+}

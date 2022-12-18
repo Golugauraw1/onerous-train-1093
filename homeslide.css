@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  /* height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}  */
+
+.slider>div {
+  margin-top: 2.5%;
+  margin-left: 8%;
+  display: flex;
+  justify-content: flex-start;
+  width: 1400px;
+  height: 200px;
+  /* background-color: black; */
+  overflow: hidden;
+  position: relative;
+}
+
+.sliding{
+  display: flex;
+  flex-basis: 20%;
+  flex: 1;
+  height: 100%;
+  flex-shrink: 0;
+  width: 4200px;
+  transition: .5s;
+  position: relative;
+}
+
+.elements {
+  width: 200px;
+  height: 200px;
+  transition: .5s;
+  flex: 1;
+  flex-shrink: 0;
+}
+
+#btn1 {
+  width: 50px;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#btn2 {
+  width: 50px;
+  height: 30px;
+  position: fixed;
+  right: 0%;
+  top: 0;
+  z-index: 1;
+}
+.slider-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  gap: 10%;
+}
+.slider-btn>button{
+   width: 350px;
+   height: 55px;
+   font-size: 22px;
+   font-variant: small-caps;
+   border-radius: 90px;
+   color: white;
+   background-color: #257cff ;
+   border: none;
+}
+.slider-btn>button:hover{
+     background-color: rgb(255, 255, 255);
+     color: #257cff;
+     border: 1px solid #257cff ;
+}
