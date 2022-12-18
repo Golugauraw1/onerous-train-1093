@@ -40,6 +40,10 @@ body{
     display: flex;
     justify-content: space-between;
 }
+.mainbody>div:nth-child(1)>div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 25px;
+}
 .main2>div{
     font-size:15px;
     padding: 10px;
@@ -75,4 +79,34 @@ body{
 .footer p{
     font-size: small;
     color: rgb(26, 25, 25);
+}
+.card_details{
+    width: 550px;
+    height: 310px;
+}
+.card_details input{
+    background-color: rgb(238, 245, 252);
+    height: 50px;
+    border: 0px;
+    border-bottom: 2px solid grey;
+}
+.card_details>div{
+    display: flex;
+    justify-content: space-around;
+}
+#card_number{
+    width: 85%;
+}
+#address{
+    width: 85%;
+}
+#confirm_purchase{
+    background-color: rgb(17, 174, 236);
+    font-size:18px;
+    color: aliceblue;
+    width: 85%;
+    height: 50px;
+    margin: 30px 30px;
+    border: 0px;
+    cursor: pointer;
 }
