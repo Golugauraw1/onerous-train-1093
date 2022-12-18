@@ -4,8 +4,13 @@
     box-sizing: border-box;
     font-family: sans-serif,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+body{
+  width: 100%;
+  height: auto;
+}
  #navbar{
     width: 100%;
+    height: auto;
     background-color: #257cff;
     display: flex;
     justify-content: space-around;
