@@ -114,11 +114,44 @@
             color: #8A8A8F;
             line-height: 1.5;
         }
+        #message {
+         position: relative;
+         padding: 20px;
+         margin-top: 10px;
+        }
+    
+        #message p {
+        padding: 10px 35px;
+        font-size: 18px;
+        }
+        .valid {
+         color: green;
+         }
+    
+        .valid:before {
+         position: relative;
+         left: -35px;
+         content: "✔";
+         }
+         .invalid {
+          color: red;
+          }
+    
+          .invalid:before {
+           position: relative;
+           left: -35px;
+            content: "✖";
+          }
+          .container>h1{
+            text-align: center;
+            color:black;
+          }
         
     </style>
 </head>
 <body>
     <div class="container">
+        <h1 id="message"></h1>
         <div id="container-card">
             <div id="card">
 
@@ -142,11 +175,17 @@
                         </p>
                         <p>
                             <label for="password" class="youpasswd" data-icon="p">  Password </label>
-                            <input id="password" name="password" required="required" type="password" placeholder="Password" />
+                            <input id="password" name="password" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" />
                         </p>
+                        <div id="message">
+                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                            <p id="number" class="invalid">1 <b>number</b>(0-9)</p>
+                            <p id="letter" class="invalid">1 <b>lowercase</b> letter(a-z)</p>
+                            <p id="capital" class="invalid">1 <b>uppercase</b> letter(A-Z)</p>  
+                        </div>
                         <input id="password" name="password" required="required" type="password" placeholder="Conform Password" />
                         <p class="loginbutton">
-                            <input type="submit" value="CREATE ACCOUNT" />
+                            <input onclick="readValue()" type="submit" value="CREATE ACCOUNT" />
                         </p>
                         <div id="tojefit">Already a member? 
                             <a href="login.html" target="_self">Sign in?</a>. 
@@ -159,3 +198,77 @@
     </div>
 </body>
 </html>
+
+<script>
+   document.querySelector("#signup form").addEventListener("submit",myfun);
+    let Arr=JSON.parse(localStorage.getItem("myfitness")) || [];
+
+function myfun(event){
+    event.preventDefault();
+    let Obj={
+     Name:document.querySelector("#username").value,
+     Email:document.querySelector("#email").value,
+     Password:document.querySelector("#password").value,
+    };
+
+     console.log(Obj)
+    // alert("Username has been created successfully");
+    // window.location.href="login.html"
+     Arr.push(Obj)
+    localStorage.setItem("myfitness",JSON.stringify(Arr));
+}
+
+    let myInput = document.getElementById("password");    
+    let letter = document.getElementById("letter");
+    let capital = document.getElementById("capital");
+    let number = document.getElementById("number");
+    let length = document.getElementById("length");
+
+    myInput.onkeyup = function() {
+      // Validate lowercase letters
+      var lowerCaseLetters = /[a-z]/g;
+      if(myInput.value.match(lowerCaseLetters)) {  
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+      } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+      }
+      
+      // Validate capital letters
+      var upperCaseLetters = /[A-Z]/g;
+      if(myInput.value.match(upperCaseLetters)) {  
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+      } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+      }
+    
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+      
+      // Validate length
+      if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }
+
+    function readValue(){
+     let userInput= document.querySelector("#username");
+     let message=document.querySelector("#message");
+
+     message.innerHTML="Welcome to FITNESS CLUB ," + userInput.value;
+    }
+</script>
