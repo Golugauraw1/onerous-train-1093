@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Designed By Our Experts</title>
     <link rel="stylesheet" href="/workoutPlanProDesigned_0458/styles/pro_designed_plan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
 
+    <div id="loader"><div class="loader"></div></div>
     <section id="wholeBody">
         <div id="heading">
             <div class="top_heading_wrapper">
@@ -34,7 +36,8 @@
             <div id="cousel_grand_parent">
 
                 <div>
-                    <button id="btn1" onclick="move2()"></button>
+                    <button id="btn1" onclick="move2()">
+                        <i class="fa-solid fa-less-than"></i></button>
                     <div class="cousel_wrapper">
 
                         <div class="slider">
@@ -74,7 +77,8 @@
                             </div>
                         </div>
                     </div>
-                    <button id="btn2" onclick="move()"></button>
+                    <button id="btn2" onclick="move()">
+                        <i class="fa-solid fa-greater-than"></i></button>
                 </div>
                 
 
@@ -164,19 +168,19 @@
                                             Categories:</strong></a>
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-maintaining" href="">Maintaining</a>
+                                    <a class="routineButton" data-name="category"  href="#">Maintaining</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-bulking" href="">Bulking</a>
+                                    <a class="routineButton" data-name="category" href="#">Bulking</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-cutting" href="">Cutting</a>
+                                    <a class="routineButton" data-name="category"  href="#">Cutting</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-sport" href="">Sport</a>
+                                    <a class="routineButton" data-name="category" href="#">Sport</a>
 
                                 </li>
                             </ul>
@@ -190,15 +194,15 @@
                                 <li><a style="color:#69C;" href=""><strong>Exp.
                                             Level:</strong></a></li>
                                 <li>
-                                    <a class="routineButton" id="routine-beginner" href="">Beginner</a>
+                                    <a class="routineButton" data-name="exp" href="#">Beginner</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-intermediate" href="">Intermediate</a>
+                                    <a class="routineButton" data-name="exp" href="#">Intermediate</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-advanced" href="">Advanced</a>
+                                    <a class="routineButton" data-name="exp" href="#">Advanced</a>
 
                                 </li>
 
@@ -211,18 +215,18 @@
                             <ul type="none">
                                 <br />
                                 <li>
-                                    <a style="color:#69C;" href=""><strong>Type:</strong></a>
+                                    <a style="color:#69C;" href="#"><strong>Type:</strong></a>
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-featured" href="">Featured</a>
+                                    <a class="routineButton" data-name="type" href="#">Featured</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-elite" href="">Elite</a>
+                                    <a class="routineButton" data-name="type" href="#">Elite</a>
 
                                 </li>
                                 <li>
-                                    <a class="routineButton" id="routine-free" href="">Free</a>
+                                    <a class="routineButton" data-name="type" href="#">Free</a>
 
                                 </li>
                             </ul>
@@ -273,7 +277,8 @@
             </div>
         </div>
         <div id="bottomBox">
-            <div class="page_option_color_blue">Create A Plan</div>
+            <div class="page_option_color_blue"><a href="./createNewPlan.html">Create A Plan</a>
+                </div>
             <div id="middle_button_wrapper">
                 <div id="button_box"></div>
             </div>

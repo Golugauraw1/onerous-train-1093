@@ -98,10 +98,11 @@ body {
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 47%;
+    top: 44%;
     left: -3.5%;
     z-index: 1;
     border-radius: 50%;
+    border: 1px solid gray;
     
   }
 
@@ -110,16 +111,17 @@ body {
     height: 30px;
     position: absolute;
     right: -3.5%;
-    top: 47%;
+    top: 44%;
     z-index: 1;
     border-radius: 50%;
   }
-
+  .fa-solid {
+    font-size: 24px;
+    color: #040404;
+}
 /*----------------------------------------------- cards style--------------------------------------------- */
 
-.elements {
-    /* padding: 10px; */
-}
+
 .cards_Wrapper_First,
 .cards_Wrapper_Second,
 .cards_Wrapper_Third,
@@ -283,6 +285,10 @@ body {
     background-color: rgb(33, 144, 199);
     border-radius: 5px;
 }
+.page_option_color_blue>a {
+    color: white;
+    text-decoration: none;
+}
 
 #bottomBox>div:nth-child(1) {
     margin-left: 110px;
@@ -292,8 +298,31 @@ body {
     margin-right: 110px;
 }
 
+#wholeBody {
+    display: none;
+}
 
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
+  #loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 /* ================================================Meadia Query================================= */
 
@@ -301,11 +330,6 @@ body {
     .top_bottom_text>h3 {
         margin-top: 5px;
     }
-    .heading_bottom>h3 {
-        
-    } 
-    
-  
 }
   
 @media (min-width: 768px) {

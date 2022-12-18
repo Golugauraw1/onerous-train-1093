@@ -143,7 +143,7 @@ function RenderDataOnSlider(box, data) {
 
 setInterval(() => {
     move()
-}, 3000)
+}, 4000)
 
 let direction;
 let arr = Array.from(document.getElementsByClassName("elements"));
@@ -189,7 +189,11 @@ async function RenderAll() {
     let [data, count] = resultArray;
     console.log(data);
     RenderTable(data);
-    paginationFactory(count)
+    paginationFactory(count);
+    setTimeout(()=> {
+        document.querySelector("#loader").style.display = "none";
+        document.querySelector("#wholeBody").style.display = "block";
+    },0)
 }
 let tableBody = document.querySelector("#Mega_Table_body");
 let buttonBox = document.querySelector("#button_box");
@@ -222,10 +226,12 @@ function getAsButton(cls, dataId, item) {
 //=========================================Pagination Intilizer Function=======================================
 
 function paginationFactory(dataCount) {
-    let totalbuttons = Math.ceil(dataCount / 15);
+    let totalbuttons = Math.ceil(dataCount / 10);
     let arr = [];
     for (let i = 1; i <= totalbuttons; i++) {
+
         arr.push(getAsButton("buttons", i, i))
+
     }
     buttonBox.innerHTML = `
     ${arr.map((item) => {
@@ -272,7 +278,7 @@ async function FilteredData(gender) {
      
     function paginationFactory1(dataCount) {
         buttonBox.innerHTML = null;
-        let totalbuttons = Math.ceil(dataCount / 15);
+        let totalbuttons = Math.ceil(dataCount / 10);
         let arr = [];
         for (let i = 1; i <= totalbuttons; i++) {
             arr.push(getAsButton("buttons", i, i))
@@ -294,15 +300,58 @@ async function FilteredData(gender) {
 
 });
 
-//====================================================Sorting By Categorty========================================
+//====================================================Sorting By Category========================================
+async function FilterByCategory(category,value) {
+    let rawData = await fetch(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_&${category}=${value}&_limit=10&_page=${1}`);
+    let data = await rawData.json();
+    return Promise.all([data,rawData.headers.get("X-Total-Count")])
+}
+
 
 let routinebuttons = document.querySelectorAll(".routineButton");
 
-// for(let routinebutton of routinebuttons) {
-//     routinebutton.addEventListener("click", () => {
-//         let value = 
-//     })
-// }
+for(let routinebutton of routinebuttons) {
+    routinebutton.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        let value = e.target.innerText;
+        let cat = e.target.dataset.name;
+        console.log(cat,value);
+        
+
+        (async() => {
+            let result = await FilterByCategory(cat,value);
+        
+            console.log(result)
+            RenderTable(result[0])
+            paginationFactory3(result[1]);
+        })();
+
+        function paginationFactory3(dataCount) {
+            buttonBox.innerHTML = null;
+            let totalbuttons = Math.ceil(dataCount / 10);
+            let arr = [];
+            for (let i = 1; i <= totalbuttons; i++) {
+                arr.push(getAsButton("buttons", i, i))
+            }
+            buttonBox.innerHTML = `
+            ${arr.map((item) => {
+                return item;
+            }).join(" ")
+                }
+            `
+            let pagiNationbuttons = document.querySelectorAll(".buttons");
+            for (let pagiNationbutton of pagiNationbuttons) {
+                pagiNationbutton.addEventListener("click", (e) => {
+                    let id = e.target.dataset.id;
+                    limitedData(`https://ill-plum-gorilla-kit.cyclic.app/workoutPlan?_&${cat}=${value}&`,id);
+                })
+            }
+        };
+
+
+    })
+}
 
 
 
@@ -316,7 +365,7 @@ function RenderTable(array) {
         return `
         <tr class="routine_table_body_row">
     <td align="left">
-        <a id="routine-banner" href=''>
+        <a id="routine-banner" href='#'>
             <div style="position: relative; height: 50px; overflow: hidden; text-overflow: ellipsis">
                 <img style="object-fit:cover"
                     src="${item.image}" width="75"
@@ -327,7 +376,7 @@ function RenderTable(array) {
 
     <td align="left">
         <span class="">
-            <a id="routine-title" href='' style="text-decoration : none; color: rgb(58, 184, 230)">
+            <a id="routine-title" href='#' style="text-decoration : none; color: rgb(58, 184, 230)">
                 <div
                     style="position: relative; width: 230px; height: 37px; overflow: hidden; text-overflow: ellipsis; font-weight:bold; align: "center";>
                     ${item.title}</div>

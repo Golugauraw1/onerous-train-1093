@@ -120,6 +120,19 @@ section {
     color: #555556;
 }
 
+#days_box {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    margin: auto;
+    overflow: scroll;
+    overflow-y: hidden;
+    
+}
+#days_box>button {
+    width: 40%;
+    border: 1px solid gray;
+}
 
 
 
