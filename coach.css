@@ -17,6 +17,7 @@ body{
     color: rgb(49, 49, 49);
 }
 .des{
+    margin-top: 15px;
     text-align: center;
 }
 .des>h3{
