@@ -56,7 +56,7 @@ document.querySelector("#otp_btn").addEventListener("click",()=>{
             </div>
             <button id="confirm_purchase" data-toggle="modal" data-target="#myModal">Confirm Purchase</button>
         </div>`;
-        window.location.href="coach.html"
+        window.location.href="index.html"
         }, 6000);
   }
   else {
