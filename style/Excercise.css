@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    position:relative
+}
+
+ul{
+    list-style: none;
+}
+
+
+#data1, #data3{
+    /* border:  1px solid black; */
+    margin: auto;
+    width: 920px;
+    /* height: 98px; */
+}
+
+#data2{
+    /* border: 1px solid black; */
+    margin: auto;
+    width: 920px;
+}
+
+
+/*
+*                                           ===================> MIDPART
+*/
+
+#midpart{
+    /* border: 1px solid black; */
+    margin: auto;
+    width: 920px;
+    margin-top: 10px;
+    height: 500px;
+    display: flex;
+}
+
+#midpart div:nth-child(1){
+    width: 20%;
+    /* margin:auto */
+}
+
+#midpart div:nth-child(1) ul{
+    list-style: none;
+}
+
+#midpart div:nth-child(3) ul{
+    list-style: none;
+}
+
+#midpart div:nth-child(2){
+    width: 60%;
+}
+
+#midpart div:nth-child(2) img{
+    margin-left: 15%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+#midpart div:nth-child(3){
+    width: 20%;
+}
+
+button{
+    background-color: 
+    #2f9dd8;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+#midpart div:nth-child(1) ul li{
+    text-decoration: none;
+    margin-top: 50px;
+    vertical-align: baseline;
+    /* margin: auto; */
+}
+
+#midpart div:nth-child(3) ul li{
+    text-decoration: none;
+    margin-top: 50px;
+    vertical-align: baseline;
+    /* margin: auto; */
+}
+
+
+/*
+*                                           ===================> MIDPART2
+*/
+
+#midpart2{
+    /* border: 1px solid black; */
+    margin: auto;
+    width: 920px;  
+    /* height: auto; */
+}
+
+#midpart2 ul{
+    list-style: none;
+}
+
+#midpart2 ul li{
+    /* margin: auto; */
+    text-decoration: none;
+    margin-top: 30px;
+    /* border: 1px solid red;  */
+}
+
+#midpart2 ul li button{
+    margin-left: 40%; 
+}
+
+/*
+*                                               ===================> Form
+*/
+form{
+    width: 1060px;
+    margin: auto;
+    font-size: 15px;
+    /* border: 1px solid black; */
+}
+#SearchButton{
+    background-color: #2f9dd8;
+    padding: 0px;
+    border-radius: 4px;
+    border: none;
+}
+
+a{
+    text-decoration: none;
+    color: #555555;
+}
+
+#conatiner{
+    margin: auto;
+    /* border: 1px solid black; */
+    width: 1060px; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* margin: 5%; */
+    justify-items: center;
+}
