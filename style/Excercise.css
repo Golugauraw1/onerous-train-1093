@@ -125,7 +125,7 @@ form{
     font-size: 15px;
     /* border: 1px solid black; */
 }
-.SearchButton{
+#SearchButton{
     background-color: #2f9dd8;
     padding: 0px;
     border-radius: 4px;
