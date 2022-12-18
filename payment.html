@@ -38,8 +38,9 @@
                             <input id="card_number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="Card Number">
                         </div>
                         <div>
-                            <input type="number" name="" id="expiration_date" placeholder="Expiration Date">
-                            <input type="number" name="" id="cvv_number" placeholder="CVV">
+                            <input type="month" name="" id="expiration_date" placeholder="Expiration Date (mm/yy)">
+                            <!-- <input  name="" id="expiration_date" placeholder="Expiration Date (mm/yy)"> -->
+                            <input type="number" name="" max-length="3" id="cvv_number" placeholder="CVV">
                         </div>
                         <div>
                             <input type="text" name="" id="address" placeholder="Address">
@@ -51,7 +52,8 @@
                         </div>
                         <button id="confirm_purchase" data-toggle="modal" data-target="#myModal">Confirm Purchase</button>
                     </div>
-                   <!-- //otp section  -->
+
+
                 </div>
 
 
