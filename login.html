@@ -165,33 +165,3 @@
     </div>
 </body>
 </html>
-
-<script>
-    document.querySelector("#login form").addEventListener("submit",jefitFunction);
-
-let jefitArr=JSON.parse(localStorage.getItem("myfitness")) || [];
-
-function jefitFunction(event){
-    event.preventDefault();
-
-    let name=document.querySelector("#username").value;
-    let password=document.querySelector("#password").value;
-     let flag=false;
-     jefitArr.forEach(function(el){
-        console.log(el.Name,el.Password)
-      if(name==el.Name && password==el.Password){
-        flag=true;
-      console.log(flag)
-      }
-      
-    })
-    if(flag==true){
-
-        alert("login successfull")
-        //  window.location.href="index.html"
-    }else{
-        alert("Wrong credentials")
-        window.location.reload()
-    }
-}
-</script>

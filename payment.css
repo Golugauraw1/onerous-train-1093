@@ -4,6 +4,7 @@ body{
 }
 
 .navbar>img{
+    width: 13%;
    padding: 15px 15%;
 }
 .navbar{
@@ -35,10 +36,10 @@ body{
     font-size: larger;
 }
 .mainbody{
-    width: 75%;
+    width: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .mainbody>div:nth-child(1)>div{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -109,4 +110,19 @@ body{
     margin: 30px 30px;
     border: 0px;
     cursor: pointer;
+}
+.otp{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+@media all and (min-width:200px) and (max-width:650px) {
+   .mainbody{
+    display: flex;
+    flex-direction: column-reverse;
+   }
 }
